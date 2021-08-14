@@ -18,13 +18,11 @@ public class PageObject implements IPageObject {
                 somePageObject = new WebPageObject(appiumDriver);
                 break;
             case "native":
-                somePageObject = new NativePageObject(appiumDriver);
+                somePageObject = new BudgetActivityPageObject(appiumDriver);
                 break;
             default: throw new Exception("Can't create a page object for "+appType);
         }
-
     }
-
 
     @Override
     public WebElement getWelement(String weName) throws NoSuchFieldException, IllegalAccessException {
@@ -32,6 +30,5 @@ public class PageObject implements IPageObject {
         Field field = somePageObject.getClass().getDeclaredField(weName);
         field.setAccessible(true);
         return (WebElement) field.get(somePageObject);
-
     }
 }
