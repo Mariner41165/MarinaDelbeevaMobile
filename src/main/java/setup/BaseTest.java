@@ -75,8 +75,6 @@ public class BaseTest implements IDriver {
         capabilities.setCapability("bundleId",bundleId);
         //if(platformName.equals("iOS")) capabilities.setCapability("automationName","XCUITest");
 
-//        driver = new AndroidDriver(
-//            new URL(format("https://%s:%s@%s/wd/hub", PROJECT_NAME, key, APPIUM_HUB)), capabilities);
         try {
             String key = URLEncoder.encode(props.getToken(), StandardCharsets.UTF_8.name());
             appiumDriver = new AppiumDriver(new URL(format("https://%s:%s@%s/wd/hub", props.getProjectName(),
@@ -86,10 +84,7 @@ public class BaseTest implements IDriver {
         }
 
         // Timeouts tuning
-        appiumDriver.manage().timeouts()
-                    .pageLoadTimeout(5, TimeUnit.MINUTES)
-                    .implicitlyWait(90, TimeUnit.SECONDS);
-
+        appiumDriver.manage().timeouts().implicitlyWait(90, TimeUnit.SECONDS);
     }
 
     private void setPageObject(String appType, AppiumDriver appiumDriver) throws Exception {

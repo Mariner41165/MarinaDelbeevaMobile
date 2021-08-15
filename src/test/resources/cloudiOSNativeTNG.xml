@@ -2,7 +2,7 @@
 <suite name="iOS Native mobile testing Suite for EPAM Mobile Cloud">
     <parameter name="appType" value="native"/>
     <!--iPhone 11-->
-    <parameter name="udid" value="00008030-001115E40EE2802E"/>
+    <parameter name="udid" value="00008030-0000798A0EF2802E"/>
     <parameter name="platformName" value="iOS"/>
     <parameter name="bundleId" value="com.epam.EPAMTestApp.ii"/>
     <parameter name="email" value="marina_delbeeva@epam.com"/>
