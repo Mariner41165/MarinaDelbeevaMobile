@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="iOS Web mobile testing Suite for EPAM Mobile Cloud">
+    <parameter name="appType" value="web"/>
+    <!--iPhone X-->
+    <parameter name="udid" value="8febcdcd8af2065ed76cae4f9dc033fe5656616a"/>
+    <parameter name="platformName" value="iOS"/>
+    <parameter name="bundleId" value="com.epam.EPAMTestApp.ii"/>
+    <parameter name="email" value="marina_delbeeva@epam.com"/>
+    <parameter name="password" value="12345678"/>
+    <test name="iOS native tests">
+        <groups>
+            <run>
+                <include name="native"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="scenarios"/>
+        </packages>
+    </test>
+</suite>

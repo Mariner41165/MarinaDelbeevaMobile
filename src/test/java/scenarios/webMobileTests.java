@@ -12,8 +12,7 @@ public class webMobileTests extends BaseTest {
 
     @Parameters ({"url","textForSearch"})
     @Test(groups = {"web"}, description = "Test performs search by keyword and checks relevant results")
-    public void testForAndroidWebApplication(String url, String textForSearch)
-        throws InterruptedException, NoSuchFieldException, IllegalAccessException, InstantiationException {
+    public void testForAndroidWebApplication(String url, String textForSearch) {
         // open google search page
         getDriver().get(url);
 
