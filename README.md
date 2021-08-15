@@ -10,7 +10,9 @@ mvn clean test -PcloudWeb - initializes web application test on device Google Pi
 
 mvn clean test -PcloudIosWeb - initializes web application test on device iPhone X  
 
+Note, that before running native tests drag&drop apk file from src/main/resources/ to 
+
 !Attention
 
 To run the tests on EPAM Mobile Cloud person should provide his personal token for security reasons. It can be found in users settings on mobilecloud.epam.com. Copy the token
-and paste it in file "project.properties" in the directory src/test/resources/. 
+and paste it in file src/test/resources/project.properties. 
