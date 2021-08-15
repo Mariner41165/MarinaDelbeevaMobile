@@ -12,5 +12,5 @@ mvn clean test -PcloudIosWeb - initializes web application test on device iPhone
 
 !Attention
 
-For security reasons you should provide presonal security token to run the tests on EPAM Mobile Cloud. You can get it on mobilecloud.epam.com in users settings. Copy the token
+To run the tests on EPAM Mobile Cloud person should provide his personal token for security reasons. It can be found in users settings on mobilecloud.epam.com. Copy the token
 and paste it in file "project.properties" in the directory src/test/resources/. 
