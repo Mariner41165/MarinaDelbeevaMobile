@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="EPAM mobile cloud Android Web testing Suite">
     <parameter name="appType" value="web"/>
-    <parameter name="deviceName" value="Google Pixel 2"/>
+    <parameter name="deviceName" value="Google Pixel 5"/>
     <parameter name="platformName" value="Android"/>
     <parameter name="browserName" value="Chrome"/>
     <parameter name="url" value="http://google.com"/>

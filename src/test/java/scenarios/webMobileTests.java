@@ -12,7 +12,7 @@ public class webMobileTests extends BaseTest {
 
     @Parameters ({"url","textForSearch"})
     @Test(groups = {"web"}, description = "Test performs search by keyword and checks relevant results")
-    public void testForAndroidWebApplication(String url, String textForSearch) {
+    public void testForWebApplication(String url, String textForSearch) {
         // open google search page
         getDriver().get(url);
 
@@ -23,6 +23,9 @@ public class webMobileTests extends BaseTest {
 
         // check google page title
         assert ((WebDriver) getDriver()).getTitle().equals("Google") : "This is not Google search page";
+        new WebDriverWait(getDriver(), 10).until(
+            wd -> ((JavascriptExecutor) wd).executeScript("return document.readyState").equals("complete")
+        );
 
         // make a search using keyword EPAM
         GooglePageObject g = new GooglePageObject(getDriver());

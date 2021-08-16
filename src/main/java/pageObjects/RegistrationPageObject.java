@@ -20,6 +20,9 @@ public class RegistrationPageObject {
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/registration_confirm_password")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeSecureTextField[@value='Repeat please']")
     WebElement confirmPasswordField;
+    @AndroidFindBy(xpath = "//*[@text='Confirm Password']")
+    @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Confirm password']")
+    WebElement confirmPasswordText;
     @AndroidFindBy(id = "platkovsky.alexey.epamtestapp:id/register_new_account_button")
     @iOSXCUITFindBy(xpath = "//XCUIElementTypeStaticText[@label='Register new account']")
     WebElement registerNewAccountBtn;
@@ -33,6 +36,7 @@ public class RegistrationPageObject {
         usernameField.sendKeys(email);
         passwordField.sendKeys(password);
         confirmPasswordField.sendKeys(password);
+        confirmPasswordText.click();
         registerNewAccountBtn.click();
     }
 }
