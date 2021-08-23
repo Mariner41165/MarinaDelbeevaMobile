@@ -30,10 +30,11 @@ public class webMobileTests extends BaseTest {
         g.sendSearchRequest(textForSearch);
 
         // make sure that there are some relevant results
-        assert (g.getListOfSearchResults().size() > 0) : "Forbidden: result of search is an empty list";
+        assert (g.getListOfSearchResults(textForSearch).size() > 0) : "Forbidden: result of search is an empty list";
 
         // log that test finished
-        System.out.printf("Count of displayed results for \"%s\": %s%n", textForSearch, g.getListOfSearchResults().size());
+        System.out.printf("Count of displayed results for \"%s\": %s%n", textForSearch,
+            g.getListOfSearchResults(textForSearch).size());
     }
 
 }

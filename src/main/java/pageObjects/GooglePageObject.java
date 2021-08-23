@@ -1,7 +1,9 @@
 package pageObjects;
 
 import io.appium.java_client.AppiumDriver;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,8 +29,11 @@ public class GooglePageObject {
         searchField.sendKeys(Keys.ENTER);
     }
 
-    public List<WebElement> getListOfSearchResults() {
-        return results;
+    public List<WebElement> getListOfSearchResults(String textForSearch) {
+        List<WebElement> resultsContainingText =
+            results.stream().filter(el -> el.getAttribute("href").contains(textForSearch.toLowerCase()))
+                   .collect(Collectors.toList());
+        return resultsContainingText;
     }
 
 }
