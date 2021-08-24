@@ -2,12 +2,10 @@ package pageObjects;
 
 import io.appium.java_client.AppiumDriver;
 import java.util.List;
-import org.openqa.selenium.JavascriptExecutor;
+import java.util.stream.Collectors;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class GooglePageObject {
 
@@ -19,7 +17,7 @@ public class GooglePageObject {
     @FindBy(xpath = "//li[@class='sbct'][1]")
     WebElement searchFirstSuggestion;
 
-    @FindBy(xpath = "//*[@class='g']")
+    @FindBy(xpath = "//div[@id='rso']")
     List<WebElement> results;
 
     public GooglePageObject(AppiumDriver appiumDriver) {
@@ -32,7 +30,10 @@ public class GooglePageObject {
         searchFirstSuggestion.click();
     }
 
-    public List<WebElement> getListOfSearchResults() {
-        return results;
+    public List<WebElement> getListOfSearchResults(String textForSearch) {
+        List<WebElement> resultsContainingText =
+            results.stream().filter(el -> el.getText().contains(textForSearch.toLowerCase()))
+                   .collect(Collectors.toList());
+        return resultsContainingText;
     }
 }
