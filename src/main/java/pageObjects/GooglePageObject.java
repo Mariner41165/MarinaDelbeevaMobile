@@ -16,7 +16,10 @@ public class GooglePageObject {
     @FindBy(xpath = "//*[@class='gLFyf']")
     WebElement searchField;
 
-    @FindBy(css = "a.C8nzq")
+    @FindBy(xpath = "//li[@class='sbct'][1]")
+    WebElement searchFirstSuggestion;
+
+    @FindBy(xpath = "//div[@id='rso']")
     List<WebElement> results;
 
     public GooglePageObject(AppiumDriver appiumDriver) {
@@ -26,14 +29,14 @@ public class GooglePageObject {
 
     public void sendSearchRequest(String textForSearch) {
         searchField.sendKeys(textForSearch);
-        searchField.sendKeys(Keys.ENTER);
+        searchFirstSuggestion.click();
     }
 
     public List<WebElement> getListOfSearchResults(String textForSearch) {
         List<WebElement> resultsContainingText =
-            results.stream().filter(el -> el.getAttribute("href").contains(textForSearch.toLowerCase()))
+            results.stream().filter(el -> el.getText().contains(textForSearch.toLowerCase()))
+            //results.stream().filter(el -> el.getAttribute("href").contains(textForSearch.toLowerCase()))
                    .collect(Collectors.toList());
         return resultsContainingText;
     }
-
 }
