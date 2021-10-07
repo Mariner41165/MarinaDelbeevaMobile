@@ -5,14 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.mtat</groupId>
-    <artifactId>mobileTaTrainingV2</artifactId>
+    <artifactId>MarinaDelbeevaMobile</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
             <groupId>io.appium</groupId>
             <artifactId>java-client</artifactId>
-            <version>7.3.0</version>
+            <version>7.5.1</version>
         </dependency>
         <dependency>
             <groupId>org.testng</groupId>
@@ -67,7 +67,7 @@
                 <suite.file>./src/test/resources/webTNG.xml</suite.file>
             </properties>
         </profile>
-    </profiles>
 
+    </profiles>
 
 </project>
